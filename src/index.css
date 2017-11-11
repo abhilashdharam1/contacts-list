@@ -1,0 +1,39 @@
+
+.activeNav {
+  color: 555 !important;
+  background-color: #e7e7e7 !important; 
+}
+
+.separate-list {
+	padding: 20px;
+	border: 1px solid black;
+	background-color: gray;
+	border-radius: 10px;
+}
+
+.contacts-list {
+	width: 50%;
+	float: left;
+}
+
+.user-details {
+	width: 50%;
+	float: right;
+}
+
+.user-details h2, h4{
+	padding-left: 50px;
+}
+
+.update-button {
+    width: 50px;
+    height: 20px;
+    padding-left: 0px;
+    padding-bottom: 20px;
+    padding-top: 0;
+    margin-left: 10px;
+}
+
+.icon-badge {
+	border-radius: 85px;
+}
