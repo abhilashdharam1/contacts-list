@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 import '../index.css';
 import {selectContact, getContacts} from '../actions/actions';
 
@@ -17,7 +16,7 @@ class Contactslist extends Component {
 			return (
 					<div className="separate-list" key={id}
 					onClick={() => this.props.selectContact(contact)}>
-		          <img src= {contact.img} className="icon-badge"/><br />
+		          <img alt="" src= {contact.img} className="icon-badge"/><br />
 		           {contact.nickName}
 	        	</div>
 			)

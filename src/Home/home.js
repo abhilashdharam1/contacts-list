@@ -1,9 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-//import ContactItem from '../Contacts/contacts';
-import contactsList from '../containers/contactsList';
-import App from '../Components/app';
 import '../index.css';
 
 class Home extends React.Component {

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {selectContact} from '../actions/actions';
 
 class UserDetail extends Component {
 	render() {
@@ -8,8 +7,8 @@ class UserDetail extends Component {
 			return (<h4>Select User..</h4>)
 		}
 		return (
-			<div onClick={() => this.props.selectContact()}>
-				<img src= {this.props.contact.img} /><br />
+			<div>
+				<img alt="" src= {this.props.contact.img} /><br />
 				Name: {this.props.contact.firstName} {this.props.contact.lastName} <br />
 				Email: {this.props.contact.emailAddress} <br />
 				Phone: {this.props.contact.phoneNumber}
