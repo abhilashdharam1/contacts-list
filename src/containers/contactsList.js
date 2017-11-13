@@ -2,16 +2,18 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import '../index.css';
-import {selectContact} from '../actions/actions';
+import {selectContact, getContacts} from '../actions/actions';
 
 class Contactslist extends Component {
 	constructor(props) {
 		super(props);
 		this.createContacts = this.createContacts.bind(this);
 	}
-
+	componentDidMount(){
+		this.props.getContacts();
+	}
 	createContacts() {
-		return this.props.contacts.map((contact, id) => {
+		return this.props.contacts ? this.props.contacts.contacts.map((contact, id) => {
 			return (
 					<div className="separate-list" key={id}
 					onClick={() => this.props.selectContact(contact)}>
@@ -19,7 +21,7 @@ class Contactslist extends Component {
 		           {contact.nickName}
 	        	</div>
 			)
-		})
+		}) : null
 	}
 	
 	render() {
@@ -39,7 +41,10 @@ function mapStateToProps(state) {
 }
 
 function matchDispatchToProps(dispatch) {
-	return bindActionCreators({selectContact: selectContact},dispatch)
+	return { 
+		selectContact : (contact) => dispatch(selectContact(contact)),
+		getContacts: () => dispatch(getContacts())
+	}
 }
 
 export default connect(mapStateToProps, matchDispatchToProps)(Contactslist);
